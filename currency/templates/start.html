@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+<section class="about d-flex min-vh-100">
+    <div class="container mt-auto mb-auto">
+        <div class="row mb-5">
+            <div class="col-12">
+                <form action="{% url 'upload' %}" method="post" class="text-center">
+                    {% csrf_token %}
+                    <p><button type="submit" class="btn btn-login btn-sm">Собрать данные</button></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

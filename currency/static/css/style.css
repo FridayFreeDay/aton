@@ -1,0 +1,467 @@
+html{
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+input[type='file'] {
+  padding-left: 180px;
+  color: transparent;
+}
+
+table{ 
+  overflow: hidden; 
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px 5px var(--dark_accent);
+}​
+
+body{
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height:100%;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+    list-style-type: none;
+  }
+
+a { 
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* Изображение в профиле */
+
+.profile {  
+  position: relative;
+  overflow:hidden;
+  width:250px;
+  height:250px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px 2px var(--dark_accent);
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.profile img {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:250px;
+  height:250px;
+  object-fit:cover;
+}
+
+
+/* Изображения в статистике */
+
+.image1 { 
+  filter: invert(100%); 
+  -webkit-filter:invert(100%); 
+  } 
+
+.list {
+  display: flex;
+}
+
+.li_row_left {
+  display: inline-block; 
+}
+.li_row_right {
+  display: inline-block; 
+  align-items: center;
+}
+
+
+/* Аккордеон */
+
+.acor-container {
+  margin: 70px 0;
+}
+.acor-container .acor-body {
+  width: calc(100% - 45px);
+  margin: 0 auto;
+  height: 0;
+  color: rgba(0, 0, 0, 0);
+  background: var(--pr);
+  line-height: 18px;
+  padding: 0 30px;
+  box-sizing: border-box;
+  transition: color 0.5s, padding 0.5s;
+  overflow: hidden;
+  font-family: inherit; 
+  font-size: 16px;
+}
+.acor-container .acor-body p {
+  margin: 0 0 10px;
+}
+.acor-container label {
+  cursor: pointer;
+  background: #212529;
+  display: block;
+  padding: 15px 20px;
+  width: 100%;
+  color: #BEBEBE;
+  font-weight: 300;
+  box-sizing: border-box;
+  z-index: 1;
+  font-family: inherit;   
+  font-size: 18px;
+  margin: 0 0 5px;
+  transition: color .35s;
+  border-radius: 25px;
+}
+.acor-container label:hover {
+  color: white;
+}
+.acor-container input{
+  display: none;
+}
+.acor-container label:before {
+  content: '\276F';
+  float: right;
+}
+.acor-container input:checked + label {
+  background: #212529;
+  color: white;
+}
+.acor-container input:checked + label:before {
+  transition: transform .35s;
+  transform: rotate(90deg);
+}
+.acor-container input:checked + label + .acor-body {
+  height: auto;
+  margin-top: -5px;
+  color: #000;
+  padding: 20px 30px 10px;
+}
+
+/* Боковое меню */
+
+#menu {
+font-size: 16px;
+position: fixed;
+top: 0;
+left: 0px;
+width: 210px;
+height: 100%;
+padding: 50px 30px;
+text-align: center;
+background: var(--pr);
+}
+
+#menu ul {
+  padding: 0;
+  margin-top: 80px;
+}
+#menu ul li {
+list-style-type:none;
+}
+
+#menu ul li a {
+display: block;
+line-height: 50px;
+color: var(--font);
+border-top: 1px solid #eee;
+}
+
+#menu ul li a.active {
+display: block;
+line-height: 50px;
+color: var(--accent);
+font-weight: 700;
+border-top: 1px solid #eee;
+}
+#menu ul li a.active:hover {
+display: block;
+line-height: 50px;
+color: var(--dark_accent);
+border-top: 1px solid #eee;
+}
+
+#menu ul li a:hover {
+  color: rgb(190, 190, 190);
+}
+
+:root{
+    --dark_pr:#989898;
+    --pr:#fefefe;
+    --accent:#4c4c4c;
+    --dark_accent:#262626;  
+    --back: #f5f5f5;
+    --font: black;
+  }
+
+footer, section{
+    padding: 100px 0;
+  }
+footer{
+    padding: 30px;
+    background: var(--back);
+  }
+
+/* Dark mode */
+
+.darkmode-layer, .darkmode-toggle {
+  z-index: 1;
+}
+
+.photo {
+  z-index: 2;
+}
+
+/*  */
+
+header{
+    position: fixed;
+    z-index: 3;
+    background: #010101;
+    color: #d9d9d9;
+    height: 70px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+header a {
+    position: absolute;
+    top: 20%;
+    text-align: center;
+}
+
+
+/* Главная страница */
+.hello{
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.cap{
+  color: var(--accent);
+}
+.cap:hover{
+  color: var(--dark_accent);
+}
+
+/* Сообщение об ошибке */
+.alert-error {
+  color: red !important;
+  background-color: #ffd4d4 !important;
+  border: 1px solid #a94442 !important;
+  padding: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+/* Таблица */
+
+.pagination > li > a {
+    background-color: var(--pr);
+    color: var(--font);
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: var(--accent) !Important;
+    border: solid 1px var(--back) !Important;
+}
+
+.pagination > .active > a:hover
+{
+    color: var(--dark_pr);
+    background-color: var(--accent) !Important;
+    border: solid 1px var(--back);
+}
+
+td, th{
+  text-align: center;
+  width: 500px;
+  height: 50px;
+}
+
+
+/* Форма */
+
+form {
+  padding: 0 5px;
+}
+.form-class-active {
+  background-color: var(--dark_pr); 
+  color: white; 
+  border-width: 2px;
+  border-color: black;
+  border-radius: 4px;
+ }
+.form-class-active:hover {
+  background-color: var(--dark_pr); 
+  color: white; 
+  border-width: 2px;
+  border-color: black;
+  border-radius: 4px;
+ }
+ .form-class-none {
+  background-color: rgb(108, 108, 108);
+  color: white; 
+  border-width: 2px;
+  border-color: black;
+  border-radius: 4px;
+ }
+ .form-label{
+  margin-right: 10px;
+  border-radius: 5px;
+  min-width: 100px;
+  max-width: 100px;
+  font-size: 18px;
+  color: rgba(var(--bs-secondary-rgb));
+}
+
+/* Главный шрифт */
+.fixed-font-size{
+  font-size: 18px;
+}
+/* Кнопка фильтрации */
+
+.btn-filter {
+  min-width: 200px;
+  max-width: 200px;
+  color: var(--bs-white);
+  background-color: var(--dark_pr);
+  margin: 0 auto;
+  padding: 8px 30px;
+  font-size: 18px;
+  border-radius: 0.375em;
+}
+.btn-filter:hover {
+  min-width: 200px;
+  max-width: 200px;
+  color: var(--bs-white);
+  background-color: var(--dark_pr);
+  margin: 0 auto;
+  padding: 8px 30px;
+  font-size: 18px;
+  border-radius: 0.375em;
+}
+
+/* Кнопка авторизации */
+
+.btn-login{
+  min-width: 100px;
+  max-width: 200px;
+  color: var(--bs-white);
+  background-color: var(--accent);
+  margin: 0 auto;
+  padding: 8px 30px;
+  font-size: 16px;
+  border-radius: 0.375em;
+}
+.btn-login:hover{
+  min-width: 100px;
+  max-width: 200px;
+  color: var(--bs-white);
+  background-color: var(--dark_accent);
+  margin: 0 auto;
+  padding: 8px 30px;
+  border-radius: 0.375em;
+}
+
+/* Главное меню */
+.btn-ls{
+  min-width: 200px;
+  max-width: 200px;
+  color: var(--bs-white);
+  background-color: var(--accent);
+  margin: 0 auto;
+  padding: 8px 30px;
+}
+.btn-ls:hover{
+  min-width: 200px;
+  max-width: 200px;
+  color: var(--bs-white);
+  background-color: var(--dark_accent);
+  margin: 0 auto;
+  padding: 8px 30px;
+}
+.btn-rs{
+  min-width: 200px;
+  max-width: 200px;
+  color: var(--bs-white);
+  background-color: var(--dark_pr);
+  margin: 0 auto;
+  padding: 8px 30px;
+  
+}
+.btn-rs:hover{
+  min-width: 200px;
+  max-width: 200px;
+  color: var(--bs-white);
+  background-color: var(--accent);
+  margin: 0 auto;
+  padding: 8px 30px;
+}
+
+/* Цвет */
+.color-white{
+  color: var(--font);
+}
+.color-accent{
+  color: var(--accent);
+}
+.bgcolor1{
+  background-color: var(--dark_accent);
+}
+.bgcolor2{
+  background-color: var(--accent);
+}
+
+/* Секции */
+.about{
+  background-color: var(--back);
+}
+.about i{
+  font-size: 50px;
+  color: var(--color2)
+}
+.line{
+  width: 300px;
+  height: 1px;
+  background-color: var(--font);
+  margin: 15px auto 30px;
+}
+
+/* Footer */
+footer{
+  height: 200px;
+}
+footer .line{
+  width: 800px;
+  height: 1px;
+  background-color: var(--dark_accent);
+  margin: 15px auto 30px;
+}
+
+.a-footer{
+  color: var(--font);
+  margin: 0 30px;
+}
+.a-footer:hover {
+  color: rgb(190, 190, 190);
+}

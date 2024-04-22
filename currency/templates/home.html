@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+     <section class="about d-flex min-vh-100">
+        <div class="container mt-auto mb-auto">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <form action="" class="color-white text-center" method="POST">
+                        {% csrf_token %}
+                        {% if msg != "Выберите дату" %}
+                            <h5 class="text-danger mb-4">{{msg}}</h5>
+                        {% else %}
+                            <h5 class="mb-4">{{msg}}</h5>
+                        {% endif %}
+                        <div class='text-danger'>{{ form.non_field_errors }}</div>
+                        {% for m in form %}
+                        <p><label class="form-label" for="{{m.id_for_label}}">{{m.label}}</label>{{m}}</p>
+                        <div class="text-danger">{{ m.errors }}</div>  
+                        {% endfor %}
+                        <p><button type="submit" class="btn btn-login btn-sm">Найти</button></p>
+                    </form>
+                </div>
+            </div>
+                
+            <div class="row">
+                <div class="col-12 text-center">{{chart|safe}}</div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/fontello.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <meta content="width=1180" name="viewport" id="viewport">
+
+    <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+    <script defer src="{% static 'js/jquery-3.7.0.min.js'%}"></script>
+    <script defer src="{% static 'js/script.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    
+    <title>Currency Hunter</title>
+</head>
+<body>
+        <script>
+            function addDarkmodeWidget() {
+                new Darkmode().showWidget();
+            }
+            window.addEventListener('load', addDarkmodeWidget);
+        </script>
+
+
+{% block content %} 
+
+{% endblock content %}  
+
+
+    <footer>
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav justify-content-center  pb-3 mb-3" style="color: white">
+                    {% for m in footer %}
+                    <li class="nav-item">
+                        <a class="a-footer" href={{ m.url_name }}>{{m.title}}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="line"></div>
+                <p class="text-center" style="color: color-white">&copy; 2024 aton internship</p>
+            </div>
+        </div>
+    </footer>
+
+   
+</body>
+</html>
